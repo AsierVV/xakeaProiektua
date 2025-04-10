@@ -13,7 +13,12 @@ public abstract class Pieza {
 		this.galduta = pGalduta;
 		this.koordenatuak = pKoordenatuak;
 	}
+	public abstract boolean mugimenduEgokia(int pX, int pY);
 	
+	public void piezaJan(Pieza p){
+			
+	{
+	public abstract String toString();
 	
 	
 }
