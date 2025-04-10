@@ -5,6 +5,7 @@ public class Laukia {
 	//atributuak
 	private int x;
 	private int y;
+	private Pieza pieza;
 	
 	//eraikitzailea
 	public Laukia(int pX, int pY) {
@@ -24,5 +25,12 @@ public class Laukia {
 	public void setKoordenatuak(int pX, int pY) {
 		this.x = pX;
 		this.y = pY;
+	}
+	
+	public void setPieza(Pieza pPieza) {
+	}
+	
+	public Pieza getPieza() {
+		return this.pieza;
 	}
 }

@@ -18,4 +18,8 @@ public class PiezaZerrenda {
 		}
 		return nireEMA;
 	}
+	
+	public void gehituPieza(Pieza pPieza) {
+		this.lista.add(pPieza);
+	}
 }

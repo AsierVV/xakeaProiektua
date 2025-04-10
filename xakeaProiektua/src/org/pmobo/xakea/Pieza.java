@@ -14,4 +14,6 @@ public abstract class Pieza {
 		this.koordenatuak = pKoordenatuak;
 	}
 	
+	
+	
 }

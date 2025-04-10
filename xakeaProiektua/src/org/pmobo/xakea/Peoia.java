@@ -6,9 +6,9 @@ public class Peoia extends Pieza {
 	private boolean mugituDa;
 
 	//eraikitzailea
-	public Peoia(boolean pZuriaDa, boolean pGalduta, Laukia pKoordenatuak, boolean pMugituDa) {
-		super(pZuriaDa, pGalduta, pKoordenatuak);
-		this.mugituDa = pMugituDa;
+	public Peoia(boolean pZuriaDa) {
+		super(pZuriaDa, false);
+		this.mugituDa = false;
 	}
 	
 	
