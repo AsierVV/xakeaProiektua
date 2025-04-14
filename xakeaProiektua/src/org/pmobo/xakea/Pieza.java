@@ -13,10 +13,10 @@ public abstract class Pieza {
 		this.galduta = pGalduta;
 		this.koordenatuak = pKoordenatuak;
 	}
-	public abstract boolean mugimenduEgokia(int pX, int pY);
+	public abstract boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia);
 	
 	public void piezaJan(Pieza p){
-			
+			SIN HACER
 	{
 	public abstract String toString();
 	
