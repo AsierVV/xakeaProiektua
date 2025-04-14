@@ -23,6 +23,11 @@ public abstract class Pieza {
 	public boolean getZuriaDa(){
 		return this.zuriaDa;
 	}
+
+	//Comprueba que en el camino que hace la pieza para moverse no haya ninguna pieza, da igual el color. No comprueba la casilla final
+	public boolean bideanZerbait(int pX, int pY, int pX0, int pY0){
+		
+	}
 	
 	
 }
