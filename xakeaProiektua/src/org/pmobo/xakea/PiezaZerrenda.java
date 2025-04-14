@@ -22,4 +22,8 @@ public class PiezaZerrenda {
 	public void gehituPieza(Pieza pPieza) {
 		this.lista.add(pPieza);
 	}
+	private Iterator<Pieza> getIteradorea(){
+		return this.lista.iterator();
+	}
+	
 }
