@@ -19,6 +19,10 @@ public abstract class Pieza {
 			SIN HACER
 	{
 	public abstract String toString();
+
+	public boolean getZuriaDa(){
+		return this.zuriaDa;
+	}
 	
 	
 }
