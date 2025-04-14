@@ -15,21 +15,21 @@ public class Peoia extends Pieza {
 		if(this.mugituDA==false){
 			if(super.zuriaDA==true){
 				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY)==false){
+					if(okupatutaDago(pX, pY, pZuriaDa)==false){
 						return true;
 					} else{return false;}
 				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY)==true){
+					if(okupatutaDago(pX, pY, pZuriaDa)==true){
 						return true;
 					} else{return false;}
 				}
 			} else{
 				if((pY-pLaukia.getY()==-1 || pY-pLaukia.getY()==-2) && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY)==false){
+					if(okupatutaDago(pX, pY, pZuriaDa)==false){
 						return true;
 					} else{return false;}
 				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY)==true){
+					if(okupatutaDago(pX, pY, pZuriaDa)==true){
 						return true;
 					} else{return false;}
 				}
@@ -37,21 +37,21 @@ public class Peoia extends Pieza {
 		} else{
 			if(super.zuriaDA==true){
 				if(pY-pLaukia.getY()==1 && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY)==false){
+					if(okupatutaDago(pX, pY, pZuriaDa)==false){
 						return true;
 					} else{return false;}
 				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY)==true){
+					if(okupatutaDago(pX, pY, pZuriaDa)==true){
 						return true;
 					} else{return false;}
 				}
 			} else{
 				if(pY-pLaukia.getY()==-1 && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY)==false){
+					if(okupatutaDago(pX, pY, pZuriaDa)==false){
 						return true;
 					} else{return false;}
 				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY)==true){
+					if(okupatutaDago(pX, pY, pZuriaDa)==true){
 						return true;
 					} else{return false;}
 				}
