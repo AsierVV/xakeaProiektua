@@ -6,11 +6,11 @@ public class Peoia extends Pieza {
 	private boolean mugituDa;
 
 	//eraikitzailea
-	public Peoia(boolean pZuriaDa) {
-		super(pZuriaDa, false, pLaukia);
+	public Peoia(boolean pZuriaDa, boolean pGalduta, Laukia pKoordenatuak) {
+		super(pZuriaDa, pGalduta, pKoordenatuak);
 		this.mugituDa = false;
 	}
-	@Overraid
+	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
 		if(this.mugituDA==false){
 			if(super.zuriaDA==true){
@@ -67,3 +67,5 @@ public class Peoia extends Pieza {
 	}
 	
 }
+
+
