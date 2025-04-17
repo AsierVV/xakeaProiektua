@@ -12,10 +12,10 @@ public class Peoia extends Pieza {
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
-		if(this.mugituDA==false){
-			if(super.zuriaDA==true){
+		if(this.mugituDa==false){
+			if(super.getZuriaDa()==true){
 				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
-					if (bideanZerbait(pX, pY, pLaukia.getX(). pLaukia.getY())) {return false;}
+					if (bideanZerbait(pX, pY, pLaukia.getX().pLaukia.getY())) {return false;}
 					else {
 						if(okupatutaDago(pX, pY, pZuriaDa)==false){
 							return true;
@@ -28,7 +28,7 @@ public class Peoia extends Pieza {
 				}
 			} else{
 				if((pY-pLaukia.getY()==-1 || pY-pLaukia.getY()==-2) && pX==pLaukia.getX()){
-					if (bideanZerbait(pX, pY, pLaukia.getX(). pLaukia.getY())) {return false;}
+					if (bideanZerbait(pX, pY, pLaukia.getX().pLaukia.getY())) {return false;}
 					else {
 						if(okupatutaDago(pX, pY, pZuriaDa)==false){
 							return true;
@@ -67,5 +67,4 @@ public class Peoia extends Pieza {
 	}
 	
 }
-
 
