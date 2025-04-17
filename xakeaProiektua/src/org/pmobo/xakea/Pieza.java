@@ -14,14 +14,19 @@ public abstract class Pieza {
 		this.koordenatuak = pKoordenatuak;
 	}
 	public abstract boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia);
-	
-	public void piezaJan(Pieza p){
-			SIN HACER
-	{
 	public abstract String toString();
 
 	public boolean getZuriaDa(){
 		return this.zuriaDa;
+	}
+	public boolean galduDa() {
+		return this.galduta;
+	}
+	public void setGalduta(boolean galduta) {
+        this.galduta = galduta;
+    }
+	public void piezaJan(Pieza p){
+		SIN HACER
 	}
 	
 	
