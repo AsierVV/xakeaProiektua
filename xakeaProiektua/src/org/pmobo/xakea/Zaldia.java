@@ -4,7 +4,7 @@ public class Zaldia extends Pieza {
 	
 	//eraikitzailea
 	public Zaldia(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pKoordenatuak);
+		super(pZuriaDa, pGalduta, pLaukia);
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
