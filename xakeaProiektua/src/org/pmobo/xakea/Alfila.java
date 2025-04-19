@@ -8,9 +8,10 @@ public class Alfila extends Pieza {
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
-		// he puesto esto porque siempre si se mueve uno de Y se tiene que mover otro de X
-		if(pX-pLaukia.getX()==pY-pLaukia.getY()) {
-			if(bideanZerbait(pX, pY, pLaukia.getX(). pLaukia.getY())){
+		// he puesto esto porque siempre si se mueve uno de Y se tiene que mover otro de X (da igual la dirección)
+		// El comando "Math.abs()" coge el valor absoluto del numero
+		if(Math.abs(pX-pLaukia.getX())==Math.abs(pY-pLaukia.getY())) {
+			if(bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
 				return false;
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
@@ -19,6 +20,6 @@ public class Alfila extends Pieza {
 					return false;
 				} else {return true;}
 			}
-		} else{return false;}
+		} else {return false;}
 	}
 }
