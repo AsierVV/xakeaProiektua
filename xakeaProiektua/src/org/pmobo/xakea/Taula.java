@@ -24,87 +24,118 @@ public class Taula {
 	}
 	
 	//metodoak
+
+	//Con este metodo estamos creando el tablero del Ajedrez añadiendo todas las piezas de ambos colores.
 	public void hasieratuTaulaPiezak() {
+		//Inicializamos un aldagai del tipo Laukia llamdao laukia, para ir creado todas las piezas.
+		Laukia laukia = null;
 		//Peoi zuriak
 		for(int x=0; x<8; x++) {
-			Peoia p = new Peoia(True);
-			taula[x][1].setPieza();
-			PiezaZerrenda.getEMA()p.gehituPieza(p);
-			}
+			laukia = taula[x][1];
+			Peoia p = new Peoia(true, laukia);
+			taula[x][1].setPieza(p);
+			PiezaZerrenda.getEMA().gehituPieza(p);
+		}
 		//Peoi beltzak
 		for(int x=0; x<8; x++) {
-			Peoia p = new Peoia(False);
-			taula[x][6].setPieza();
-			PiezaZerrenda.getEMA()p.gehituPieza(p);
+			laukia = taula[x][6];
+			Peoia p = new Peoia(false, laukia);
+			taula[x][6].setPieza(p);
+			PiezaZerrenda.getEMA().gehituPieza(p);
 		}
+		
 		//Dorre zuriak
-		Pieza d1 = new Dorrea(True);
+		laukia = taula[0][0];
+		Dorrea d1 = new Dorrea(true, laukia);
 		taula[0][0].setPieza(d1);
 		PiezaZerrenda.getEMA().gehituPieza(d1);		
-		
-		Pieza d2 = new Dorrea(True);
+
+		laukia = taula[7][0];
+		Dorrea d2 = new Dorrea(true, laukia);
 		taula[7][0].setPieza(d2);
-		PiezaZerrenda.getEMA().gehituPieza(d2);		
+		PiezaZerrenda.getEMA().gehituPieza(d2);
+		
 		//Dorre beltzak
-		Pieza d3 = new Dorrea(False);
+		laukia = taula[0][7];
+		Dorrea d3 = new Dorrea(false, laukia);
 		taula[0][7].setPieza(d3);
 		PiezaZerrenda.getEMA().gehituPieza(d3);		
 
-		Pieza d4 = new Dorrea(False);
+		laukia = taula[7][7];
+		Dorrea d4 = new Dorrea(false, laukia);
 		taula[7][7].setPieza(d4);
 		PiezaZerrenda.getEMA().gehituPieza(d4);
 		
 		//Zaldi zuriak
-		Pieza z1 = new Zaldia(True);
+		laukia = taula[1][0];
+		Zaldia z1 = new Zaldia(true, laukia);
 		taula[1][0].setPieza(z1);
 		PiezaZerrenda.getEMA().gehituPieza(z1);
-		
-		Pieza z2 = new Zaldia(True);
+
+		laukia = taula[6][0];
+		Zaldia z2 = new Zaldia(true, laukia);
 		taula[6][0].setPieza(z2);
 		PiezaZerrenda.getEMA().gehituPieza(z2);
+		
 		//Zaldi beltzak
-		Pieza z3 = new Zaldia(False);
+		laukia = taula[1][7];
+		Zaldia z3 = new Zaldia(false, laukia);
 		taula[1][7].setPieza(z3);
 		PiezaZerrenda.getEMA().gehituPieza(z3);
-		
-		Pieza z4 = new Zaldia(False);
+
+		laukia = taula[6][7];
+		Zaldia z4 = new Zaldia(false, laukia);
 		taula[6][7].setPieza(z4);
 		PiezaZerrenda.getEMA().gehituPieza(z4);
 		
 		//Alfil zuriak
-		Pieza a1 = new Alfila(True);
+		laukia = taula[2][0];
+		Alfila a1 = new Alfila(true, laukia);
 		taula[2][0].setPieza(a1);
 		PiezaZerrenda.getEMA().gehituPieza(a1);
-		
-		Pieza a2 = new Alfila(True);
+
+		laukia = taula[5][0];
+		Alfila a2 = new Alfila(true, laukia);
 		taula[5][0].setPieza(a2);
 		PiezaZerrenda.getEMA().gehituPieza(a2);
+		
 		//Alfil beltzak
-		Pieza a3 = new Alfila(False);
+		laukia = taula[2][7];
+		Alfila a3 = new Alfila(false, laukia);
 		taula[2][7].setPieza(a3);
 		PiezaZerrenda.getEMA().gehituPieza(a3);
-		
-		Pieza a4 = new Alfila(False);
+
+		laukia = taula[5][7];
+		Alfila a4 = new Alfila(false, laukia);
 		taula[5][7].setPieza(a4);
 		PiezaZerrenda.getEMA().gehituPieza(a4);
+		
 		//Errege zuria
-		Pieza e1 = new Erregea(True);
+		laukia = taula[4][0];
+		Erregea e1 = new Erregea(true, laukia);
 		taula[4][0].setPieza(e1);
 		PiezaZerrenda.getEMA().gehituPieza(e1);
+		
 		//Errege beltza
-		Pieza e2 = new Erregea(True);
+		laukia = taula[4][7];
+		Erregea e2 = new Erregea(true, laukia);
 		taula[4][7].setPieza(e2);
 		PiezaZerrenda.getEMA().gehituPieza(e2);
+		
 		//Erregin zuria
-		Pieza er1 = new Erregina(True);
+		laukia = taula[3][0];
+		Erregina er1 = new Erregina(true, laukia);
 		taula[3][0].setPieza(er1);
 		PiezaZerrenda.getEMA().gehituPieza(er1);
+		
 		//Erregin beltza
-		Pieza er2 = new Erregina(False);
+		laukia = taula[3][7];
+		Erregina er2 = new Erregina(false, laukia);
 		taula[3][7].setPieza(er2);
 		PiezaZerrenda.getEMA().gehituPieza(er2);
 	}
-	
+
+	//Con este metodo vamos a mostrar el tablero después de cada jugada.
 	public void erakutsiTaula() {
 		System.out.println("\n	A B C D E F G H");
 		for (int y=0; y<8; y++) {
