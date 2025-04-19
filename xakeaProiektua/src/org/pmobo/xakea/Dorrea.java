@@ -4,7 +4,7 @@ public class Dorrea extends Pieza{
 
 	//eraikitzailea
 	public Dorrea(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pKoordenatuak);
+		super(pZuriaDa, pGalduta, pLaukia);
 	}
 
 	@Override
