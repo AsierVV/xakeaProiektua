@@ -3,8 +3,8 @@ package org.pmobo.xakea;
 public class Alfila extends Pieza {
 
 	//eraikitzailea
-	public Alfila(boolean pZuriaDa, boolean pGalduta, Laukia pKoordenatuak) {
-		super(pZuriaDa, pGalduta, pKoordenatuak);
+	public Alfila(boolean pZuriaDa, Laukia pLaukia) {
+		super(pZuriaDa, pGalduta, pLaukia);
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
