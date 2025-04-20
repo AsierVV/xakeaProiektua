@@ -31,7 +31,17 @@ public class PiezaZerrenda {
 	public boolean bideanZerbait(int pX, int pY, int pX0, int pY0){
 		
 	}
-	public boolean okupatutaDago(int x, int y) {
-		
+	public boolean okupatutaDago(int x, int y, boolean pKolorea) {
+		 Pieza pieza = Taula.getTaula().getPieza(x, y);
+
+		 // Si no hay pieza, entonces no está ocupada 
+		 if (pieza == null) {
+		        return false;
+		 }
+		 // Si hay una pieza del mismo color no se puede mover allí
+		 if (pieza.getZuriaDa() == pKolorea) {
+		        return true;
+		} else {return false;}
+
 	 }
 }
