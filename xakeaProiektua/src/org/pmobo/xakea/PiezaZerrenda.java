@@ -22,10 +22,7 @@ public class PiezaZerrenda {
 	public void gehituPieza(Pieza pPieza) {
 		this.lista.add(pPieza);
 	}
-	// Eliminar pieza (cuando es comida)
-    public void ezabatuPieza(Pieza pPieza) {
-        this.lista.remove(pPieza);
-    }
+	
 	private Iterator<Pieza> getIteradorea(){
 		return this.lista.iterator();
 	}
