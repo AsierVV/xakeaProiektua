@@ -9,9 +9,9 @@ public class Dorrea extends Pieza{
 
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
-		if ((pX==pLuakia.getX() && pY!=pLaukia.getY()) || ((pX!=pLuakia.getX() && pY==pLaukia.getY()))) {
+		if ((pX==pLaukia.getX() && pY!=pLaukia.getY()) || ((pX!=pLuakia.getX() && pY==pLaukia.getY()))) {
 			if(bideanZerbait(pX, pY, pLaukia.getX(). pLaukia.getY())){
-				return false
+				return false;
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
 				//              --> true: okupatuta dago bere kolore berdina duen piezaz
