@@ -9,7 +9,7 @@ public class Erregea extends Pieza{
 
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
-		if((pX==pLuakia.getX() && pY-pLaukia.get()==1) || (pX-pLuakia.getX()==1 && pY-pLaukia.get()==1) || (pX-pLuakia.getX()==1 && pY==pLaukia.get()) || (pX-pLuakia.getX()==1 && pY-pLaukia.get()==-1) || (pX==pLuakia.getX() && pY-pLaukia.get()==-1) || (pX-pLuakia.getX()==-1 && pY-pLaukia.get()==-1) || (pX-pLuakia.getX()==-1 && pY==pLaukia.get()) || (pX-pLuakia.getX()==-1 && pY-pLaukia.get()==1)){
+		if((pX==pLaukia.getX() && pY-pLaukia.get()==1) || (pX-pLaukia.getX()==1 && pY-pLaukia.get()==1) || (pX-pLaukia.getX()==1 && pY==pLaukia.get()) || (pX-pLaukia.getX()==1 && pY-pLaukia.get()==-1) || (pX==pLaukia.getX() && pY-pLaukia.get()==-1) || (pX-pLaukia.getX()==-1 && pY-pLaukia.get()==-1) || (pX-pLaukia.getX()==-1 && pY==pLaukia.get()) || (pX-pLaukia.getX()==-1 && pY-pLaukia.get()==1)){
 			//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
 			//              --> true: okupatuta dago bere kolore berdina duen piezaz
 			if(okupatutaDago(pX, pY, pZuriaDa)){
