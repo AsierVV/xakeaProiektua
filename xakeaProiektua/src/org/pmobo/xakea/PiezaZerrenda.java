@@ -58,14 +58,12 @@ public class PiezaZerrenda {
 	public boolean okupatutaDago(int x, int y, boolean pKolorea) {
 		 Pieza pieza = Taula.getTaula().getPieza(x, y);
 
-		 // Piezarik ez badago, ez dago okupatuta.
-		 if (pieza == null) {
-		        return false; // false bueltatzen da.
-		 }
-		 // Kolore berdineko piezarik badago, okupatuta dago.
-		 if (pieza.getZuriaDa() == pKolorea) {
-		        return true; // true bueltatzen da, kolore berdineko pieza dago.
-		} else {return false;} // false bueltatzen da, kolore ezberdineko pieza dago. Beraz, "mugitu" metodoa egiterakoan, leku horretan dagoen pieza jango (galduko) da.
-
+		// Piezarik ez badago, ez dago okupatuta.
+		if (pieza == null) {
+			return false; // false bueltatzen da.
+		}
+		
+		return pieza.getZuriaDa() == pKolorea; //Kolore berdineko pieza badago, okupatuta dago (true); kolore desberineko pieza badago, ez dago okupatuta (false).
+		// "mugitu" metodoa egiterakoan, leku horretan dagoen pieza jango (galduko) da.
 	 }
 }
