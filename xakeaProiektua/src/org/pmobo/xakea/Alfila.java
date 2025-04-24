@@ -4,7 +4,7 @@ public class Alfila extends Pieza {
 
 	//eraikitzailea
 	public Alfila(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pLaukia);
+		super(pZuriaDa, pLaukia);
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
@@ -21,5 +21,9 @@ public class Alfila extends Pieza {
 				} else {return true;}
 			}
 		} else {return false;}
+	}
+	@Override
+	public String toString() {
+	    return getZuriaDa() ? "♗" : "♝";  
 	}
 }
