@@ -4,13 +4,13 @@ public class Dorrea extends Pieza{
 
 	//eraikitzailea
 	public Dorrea(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pLaukia);
+		super(pZuriaDa, pLaukia);
 	}
 
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
-		if ((pX==pLaukia.getX() && pY!=pLaukia.getY()) || ((pX!=pLuakia.getX() && pY==pLaukia.getY()))) {
-			if(bideanZerbait(pX, pY, pLaukia.getX(). pLaukia.getY())){
+		if ((pX==pLaukia.getX() && pY!=pLaukia.getY()) || ((pX!=pLaukia.getX() && pY==pLaukia.getY()))) {
+			if(bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
 				return false;
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
@@ -20,5 +20,9 @@ public class Dorrea extends Pieza{
 				} else {return true;}
 			}
 		} else{return false;}
+	}
+	@Override
+	public String toString() {
+	    return getZuriaDa() ? "♖" : "♜";  
 	}
 }
