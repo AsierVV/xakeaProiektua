@@ -7,7 +7,7 @@ public class Peoia extends Pieza {
 
 	//eraikitzailea
 	public Peoia(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pLaukia);
+		super(pZuriaDa, pLaukia);
 		this.mugituDa = false;
 	}
 	@Override
@@ -65,6 +65,9 @@ public class Peoia extends Pieza {
 			
 		}
 	}
+	@Override
+	public String toString() {
+	    return getZuriaDa() ? "♙" : "♟";  // Peón blanco y negro
+	}
 	
 }
-
