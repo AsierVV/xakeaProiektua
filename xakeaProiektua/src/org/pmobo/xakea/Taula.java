@@ -14,7 +14,6 @@ public class Taula {
 				taula[x][y] = new Laukia(x,y);
 			}
 		}
-		hasieratuTaulaPiezak();
 	}
 	public static Taula getTaula() {
 		if (nireTaula == null) {
@@ -163,5 +162,9 @@ public class Taula {
 	
 	public void setPieza(int pX, int pY, Pieza pPieza) {
 		taula[pX][pY].setPieza(pPieza);
+	}
+
+	public void mugitu(Laukia pLaukia, int pX, int pY) {
+		
 	}
 }
