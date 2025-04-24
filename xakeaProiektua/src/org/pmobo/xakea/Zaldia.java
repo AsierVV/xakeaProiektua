@@ -4,7 +4,7 @@ public class Zaldia extends Pieza {
 	
 	//eraikitzailea
 	public Zaldia(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pGalduta, pLaukia);
+		super(pZuriaDa, pLaukia);
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
@@ -15,5 +15,10 @@ public class Zaldia extends Pieza {
 				return false;
 			} else{return true;}
 		} else{return false;}
-	}		
+	}
+    @Override
+    public String toString() {
+        return getZuriaDa() ? "♘" : "♞"; 
+    }
 }
+
