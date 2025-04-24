@@ -11,7 +11,7 @@ public class Jokoa {
             while (!partidaAmaituta) {
                 erakutsiTaula();     // Taula erakutsi
         
-                if (bandaZuri) {
+                if (txandaZuri) {
                     System.out.println("Zuriaren txanda:");
                 } else {
                     System.out.println("Beltzaren txanda:");
@@ -20,23 +20,24 @@ public class Jokoa {
                 // Mugimendua irakurri TEKLATUA-rekin
                 int x1 = Teklatua.getTeklatua().irakurri("Aukeratu PIEZAren X posizioa:");
                 int y1 = Teklatua.getTeklatua().irakurri("Aukeratu PIEZAren Y posizioa:");
+                Laukia laukiaHasiera = taula.getLaukia(x1, y1);
+                Pieza pieza = laukiaHasiera.getPieza();
+
+                // While honetan konprobatuko da aukeratutako pieza existitzen den ala ez eta egokia den ala ez.
+                while (pieza == null || (pieza.getZuriaDa() && !bandaZuri) || (!pieza.getZuriaDa() && bandaZuri) {
+                        System.out.println("Ez dago piezarik edo aukeratutako pieza ez da zure kolorekoa, aukeratu beste lauki berri bat.");
+                        int x1 = Teklatua.getTeklatua().irakurri("Aukeratu PIEZAren X posizioa:");
+                        int y1 = Teklatua.getTeklatua().irakurri("Aukeratu PIEZAren Y posizioa:");
+                        Laukia laukiaHasiera = taula.getLaukia(x1, y1);
+                        Pieza pieza = laukiaHasiera.getPieza();
+                }
+                    
                 int x2 = Teklatua.getTeklatua().irakurri("Aukeratu MUGIMENDUren X posizioa:");
                 int y2 = Teklatua.getTeklatua().irakurri("Aukeratu MUGIMENDUren Y posizioa:");
-        
-                Laukia laukiaHasiera = taula.getLaukia(x1, y1);
                 Laukia laukiaHelburu = taula.getLaukia(x2, y2);
         
-                Pieza pieza = laukiaHasiera.getPieza();
-        
-                if (pieza == null) {
-                    System.out.println("Ez dago piezarik aukeratutako laukian.");
-                }
-        
-                if (pieza.getZuriaDa() && !bandaZuri || !pieza.getZuriaDa() && bandaZuri) {
-                    System.out.println("Ez da zure txanda.");
-                }
-
                 boolean lortuMugimenduEgokia = false;   // mugimendua noiz den egokia jakiteko
+                
                 while (!lortuMugimenduEgokia) {         // loop bat eskatzeko pieza mugitzeko laukia, mugimendu egokia izan arte
                     if (!pieza.mugimenduEgokia(x2, y2, laukiaHelburu)) {
                         System.out.println("Mugimendua ez da egokia, sartu beste posizio bat pieza mugitzeko.");
