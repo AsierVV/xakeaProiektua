@@ -1,5 +1,6 @@
 package org.pmobo.xakea;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PiezaZerrenda {
 
