@@ -5,7 +5,6 @@ public abstract class Pieza {
 	//atributuak
 	private boolean zuriaDa;
 	private boolean galduta;
-	private Laukia laukia;
 	
 	//eraikitzailea
 	public Pieza(boolean pZuriaDa) {
@@ -27,14 +26,6 @@ public abstract class Pieza {
 	
 	public void setGalduta(boolean galduta) {
         	this.galduta = galduta;
-	}
-
-	public Laukia getKoordenatuak() {
-		return this.laukia;
-	}
-
-	public void setKoordenatuak(Laukia pLaukia) {
-		this.laukia = pLaukia;
 	}
 		
 }
