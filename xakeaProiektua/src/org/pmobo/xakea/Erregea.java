@@ -3,8 +3,8 @@ package org.pmobo.xakea;
 public class Erregea extends Pieza{
 
 	//eraikitzailea
-	public Erregea(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pLaukia);
+	public Erregea(boolean pZuriaDa) {
+		super(pZuriaDa);
 	}
 
 	@Override
