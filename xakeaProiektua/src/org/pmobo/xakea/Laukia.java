@@ -28,6 +28,7 @@ public class Laukia {
 	}
 	
 	public void setPieza(Pieza pPieza) {
+		this.pieza = pPieza;
 	}
 	
 	public Pieza getPieza() {
