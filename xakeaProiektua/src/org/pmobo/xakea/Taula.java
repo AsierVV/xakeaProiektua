@@ -5,8 +5,8 @@ public class Taula {
 	//atributua
 	private Laukia[][] taula;
 	private static Taula nireTaula=null;
-	private List<Pieza> piezaGaldutaZuriak;
-    	private List<Pieza> piezaGaldutaBeltzak;
+	private List<Pieza> piezaZuriGaldutak;
+    	private List<Pieza> piezaBeltzGaldutak;
 	
 	//Singleton
 	private Taula() {
@@ -16,8 +16,8 @@ public class Taula {
 				taula[x][y] = new Laukia(x,y);
 			}
 		}
-		piezaGaldutaZuriak = new ArrayList<>();
-        	piezaGaldutaBeltzak = new ArrayList<>();
+		piezaZuriGaldutak = new ArrayList<>();
+        	piezaBeltzGaldutak = new ArrayList<>();
 	}
 	
 	public static Taula getTaula() {
@@ -225,7 +225,36 @@ public class Taula {
             			piezaBeltzGaldutak.add(piezaHarrapatuta);
         		}
         	System.out.println("Harrapatutako pieza: " + piezaHarrapatuta.getClass().getSimpleName());
-	}
-}
+		}
+	}	
 	
+	public void peoiaHobetu(int pX, int pY){
+
+
+	
+		if ((p.getZuriaDa()==true && y==7)||(p.getZuriaDa()==false && y ==0)){
+			Pieza piezaBerria;
+			if (p.getZuriaDa()){
+				System.out.println("Hauek dira zure pieza galdutak: ");
+				for (Pieza p : this.piezaZuriGaldutak) {
+					System.out.println(p.getClass().getSimpleName());
+				}
+				String mota = teklatua.getTeklatua().irakurriString();
+				if (mota.toLowerCase().equals("erregina")){
+					Pieza p = new Erregina(true);}
+				if else (mota.toLowerCase().equals("alfila")){
+					Pieza p = new Alfila(true);}
+				if else (mota.toLowerCase().equals("zaldia")){
+					Pieza p = new Zaldia(true);}
+				if else (mota.toLowerCase().equals("dorrea")){
+					Pieza p = new Dorrea(true);}
+			} else{
+				System.out.println("Hauek dira zure pieza galdutak: ");
+				for (Pieza p : this.piezaBeltzGaldutak) {
+					System.out.println(p.getClass().getSimpleName());
+				}
+			}
+			
+		}
+	}
 }
