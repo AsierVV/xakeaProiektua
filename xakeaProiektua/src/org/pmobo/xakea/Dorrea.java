@@ -3,8 +3,8 @@ package org.pmobo.xakea;
 public class Dorrea extends Pieza{
 
 	//eraikitzailea
-	public Dorrea(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pLaukia);
+	public Dorrea(boolean pZuriaDa) {
+		super(pZuriaDa);
 	}
 
 	@Override
