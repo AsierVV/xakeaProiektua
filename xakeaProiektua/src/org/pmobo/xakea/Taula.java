@@ -165,6 +165,15 @@ public class Taula {
 	}
 
 	public void mugitu(Laukia pLaukia, int pX, int pY) {
-		
+   	 	Pieza p = pLaukia.getPieza();
+		pLaukia.setPieza(null);
+		//Laukia okupatuta badago aurreko metodoak kontuan hartuta soilik izan al dezake pieza etsaia
+    		if (taula[pX][pY].getPieza() != null) {
+        		piezaJan(); 
+    		}
+		//Pieza bere posizio berrian jarri
+    		taula[pX][pY].setPieza(p);
+    		System.out.println("Pieza mugitu da.");
 	}
+		
 }
