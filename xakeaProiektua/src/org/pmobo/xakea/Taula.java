@@ -1,5 +1,9 @@
 package org.pmobo.xakea;
 
+package org.pmobo.packjolasa;
+import java.util.List;
+import java.util.ArrayList;
+
 public class Taula {
 
 	//atributua
@@ -291,13 +295,13 @@ public class Taula {
 
 		//Zeharkatzen du piezaZuriGaldutak zerrenda, ikusteko ea Erregea or dagoen.
 		for (Pieza p : piezaZuriGaldutak) {
-			if (p == pieza instanceof Errege) {
+			if (p instanceof Erregea) {
 				erregeZuriBizi = false;
 			}
 		}
 		//Zeharkatzen du piezaBeltzGaldutak zerrenda, ikusteko ea Erregea or dagoen.		
 		for (Pieza p : piezaBeltzGaldutak) {
-			if (p == pieza instanceof Errege) {
+			if (p instanceof Erregea) {
 				erregeBeltzBizi = false;
 			}
 		}
