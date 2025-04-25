@@ -7,6 +7,7 @@ public class Taula {
 	private static Taula nireTaula=null;
 	private List<Pieza> piezaZuriGaldutak;
     	private List<Pieza> piezaBeltzGaldutak;
+	Teklatua t = Teklatua.getTeklatua(); // Hartzen dugu Teklatuaren instantzia t aldagaia Teklatua bezala erabiltzeko.
 	
 	//Singleton
 	private Taula() {
@@ -229,32 +230,87 @@ public class Taula {
 	}	
 	
 	public void peoiaHobetu(int pX, int pY){
+		Peoia pe = taula[pX][pY].getPieza();
+		boolean zuriaDa = pe.getZuriaDa();
 
+		//Konprobatzen dugu ea peoia ailegatu den azken lerrora.
+		if ((zuriaDa && pY==7) || (!zuriaDa && pY==0)){
+			boolean aukeraOna = false;
+			String mota = "";
 
-	
-		if ((p.getZuriaDa()==true && y==7)||(p.getZuriaDa()==false && y ==0)){
-			Pieza piezaBerria;
-			if (p.getZuriaDa()){
-				System.out.println("Hauek dira zure pieza galdutak: ");
-				for (Pieza p : this.piezaZuriGaldutak) {
-					System.out.println(p.getClass().getSimpleName());
+			//Jokalariari eskatzen da peoia hobetzeko erabili nahi duen pieza.
+			while (!aukeraOna) {
+				mota = t.irakurriString("Sartu berreskuratu nahi duzun pieza (Erregina, Alfila, Zaldia edo Dorrea): ");
+
+				//Konprobatzen dugu ea aukeratutako pieza galdutako zerrendan dagoen.
+				ArrayList<Pieza> galdutakoak = zuriaDa ? this.piezaZuriGaldutak : this.piezaBeltzGaldutak; //Peoia zuria bada, piezaZuriGaldutak zerrenda hartuko du; peoia beltza bada, piezaBeltzGaldutak zerrenda hartuko du.
+				for (Pieza p : galdutakoak) {
+					if (mota.equalsIgnoreCase(p.getClass().getSimpleName())) {
+						aukeraOna = true;
+						galdutakoak.remove(p);
+					}
 				}
-				String mota = teklatua.getTeklatua().irakurriString();
-				if (mota.toLowerCase().equals("erregina")){
-					Pieza p = new Erregina(true);}
-				if else (mota.toLowerCase().equals("alfila")){
-					Pieza p = new Alfila(true);}
-				if else (mota.toLowerCase().equals("zaldia")){
-					Pieza p = new Zaldia(true);}
-				if else (mota.toLowerCase().equals("dorrea")){
-					Pieza p = new Dorrea(true);}
-			} else{
-				System.out.println("Hauek dira zure pieza galdutak: ");
-				for (Pieza p : this.piezaBeltzGaldutak) {
-					System.out.println(p.getClass().getSimpleName());
-				}
+				if (!aukeraOna) {
+                			System.out.println("Aukeratutako pieza ez da egokia edo ez dago galduta.");
+            			}
 			}
-			
+
+			//Pieza berria sortzen dugu.
+			Pieza berria = null;
+			if (zuriaDa){ //Peoia zuria ba zen.
+				if (mota.equalsIgnoreCase("erregina")) {
+					berria = new Erregina(true);}
+				else if (mota.equalsIgnoreCase("alfila")){
+					berria = new Alfila(true);}
+				else if (mota.equalsIgnoreCase("zaldia")){
+					berria = new Zaldia(true);}
+				else if (mota.equalsIgnoreCase("dorrea")){
+					berria = new Dorrea(true);}
+				this.piezaZuriGaldutak.add(pe); //Peoia galdutako zerrendan sartzen da.
+			} else {      //Peoia beltza ba zen.
+				if (mota.equalsIgnoreCase("erregina")) {
+					berria = new Erregina(false);}
+				else if (mota.equalsIgnoreCase("alfila")){
+					berria = new Alfila(false);}
+				else if (mota.equalsIgnoreCase("zaldia")){
+					berria = new Zaldia(false);}
+				else if (mota.equalsIgnoreCase("dorrea")){
+					berria = new Dorrea(false);}
+				this.piezaBeltzGaldutak.add(pe); //Peoia galdutako zerrendan sartzen da.
+			}
+
+			//Taulan sartzen da pieza berria.
+			taula[pX][pY].setPieza(berria);
+			System.out.println("Peoia hobetu da hurrengo piezara: " + berria.getClass().getSimpleName());
 		}
 	}
+
+	public boolean partidaAmaituta() {
+		boolean erregeZuriBizi = true;
+		boolean erregeBeltzBizi = true;
+
+		//Zeharkatzen du piezaZuriGaldutak zerrenda, ikusteko ea Erregea or dagoen.
+		for (Pieza p : piezaZuriGaldutak) {
+			if (p == pieza instanceof Errege) {
+				erregeZuriBizi = false;
+			}
+		}
+		//Zeharkatzen du piezaBeltzGaldutak zerrenda, ikusteko ea Erregea or dagoen.		
+		for (Pieza p : piezaBeltzGaldutak) {
+			if (p == pieza instanceof Errege) {
+				erregeBeltzBizi = false;
+			}
+		}
+
+		//Erregeren bat ez badago bizirik partida amaitu egiten da.
+	    	if (!erregeZuriBizi) {
+	        	System.out.println("Partida amaitu da! Pieza BELTZAK irabazi dute! ZORIONAK!");
+	        	return true;
+	    	} else if (!erregeBeltzBizi) {
+			System.out.println("Partida amaitu da! Pieza ZURIAK irabazi dute! ZORIONAK!");
+	        	return true;
+		}
+	    	return false;
+	}
+
 }
