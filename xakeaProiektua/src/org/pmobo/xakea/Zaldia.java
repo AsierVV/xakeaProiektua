@@ -3,8 +3,8 @@ package org.pmobo.xakea;
 public class Zaldia extends Pieza {
 	
 	//eraikitzailea
-	public Zaldia(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pLaukia);
+	public Zaldia(boolean pZuriaDa) {
+		super(pZuriaDa);
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
