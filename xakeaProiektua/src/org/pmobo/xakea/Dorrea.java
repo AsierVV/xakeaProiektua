@@ -18,7 +18,7 @@ public class Dorrea extends Pieza{
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
 				//              --> true: okupatuta dago bere kolore berdina duen piezaz
-				if (okupatutaDago(pX, pY, pKolorea)){
+				if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
 					return false;
 				} else {return true;}
 			}
