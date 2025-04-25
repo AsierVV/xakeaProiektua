@@ -14,7 +14,7 @@ public class Alfila extends Pieza {
 		// he puesto esto porque siempre si se mueve uno de Y se tiene que mover otro de X (da igual la dirección)
 		// El comando "Math.abs()" coge el valor absoluto del numero
 		if(Math.abs(pX-pLaukia.getX())==Math.abs(pY-pLaukia.getY())) {
-			if(bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
+			if(Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
 				return false;
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
