@@ -5,6 +5,7 @@ public abstract class Pieza {
 	//atributuak
 	private boolean zuriaDa;
 	private boolean galduta;
+	private Laukia laukia;
 	
 	//eraikitzailea
 	public Pieza(boolean pZuriaDa) {
