@@ -8,6 +8,9 @@ public class Alfila extends Pieza {
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia) {
+	    if (pX < 0 || pX > 7 || pY < 0 || pY > 7) {
+	        return false;
+	    }
 		// he puesto esto porque siempre si se mueve uno de Y se tiene que mover otro de X (da igual la dirección)
 		// El comando "Math.abs()" coge el valor absoluto del numero
 		if(Math.abs(pX-pLaukia.getX())==Math.abs(pY-pLaukia.getY())) {
