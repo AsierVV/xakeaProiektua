@@ -175,5 +175,39 @@ public class Taula {
     		taula[pX][pY].setPieza(p);
     		System.out.println("Pieza mugitu da.");
 	}
+
+	//Comprueba que en el camino que hace la pieza para moverse no haya ninguna pieza, da igual el color. No comprueba la casilla final
+	public boolean bideanZerbait(int pX, int pY, int pX0, int pY0){
+		int dx = Integer.compare(pX, pX0); // X ardatzaren norabide mugimendua: -1 -> mugitzen da ezkerrera || 0 -> ez da X ardatzan mugitzen || 1 -> mugitzen da eskuinera
+    		int dy = Integer.compare(pY, pY0); // Y ardatzaren norabide mugimendua: -1 -> mugitzen da ezkerrera || 0 -> ez da Y ardatzan mugitzen || 1 -> mugitzen da eskuinera
+
+		// x eta y aldagaiak erabiliko dira piezak egiten duen bidea zeharkatzeko. Hasieratuko dira pieza mugitzen den lehenengo laukian. dx eta dy erabiltzen da, horrela adibidez
+		// x ardatzean eskuinera mugitzen bada, x aldagaia +1 egiten joango da, eta y ardatzean ez bada mugitzen, +0 egingo da. Hau bakarrik funtzionatzen du mugimendu bertikalean,
+		// horizontalean eta diagonalean; baina zaldiak piezak saltatzen dituzte, beraz ez da behar gehiago.
+		int x = pX0 + dx;
+    		int y = pY0 + dy;
+
+		while (x != pX || y != pY) {
+			if (taula[x][y].getPieza() != null) {
+				return true;
+			}
+			// Bidearen lehenengo laukiarekin amaitzean, hurrengo laukira pauso bat ematen dugu. Eta ez bada bidearen azkenengo laukia berriro prozesu guztia errepikatuko da.
+			x = x + dx;
+			y = y + dy;
+		}
+		return false; // Ez badugu ezer aurkitu bide osoan, bidea libre dago. Buelta false.
+	}
+
+	public boolean okupatutaDago(int x, int y, boolean pKolorea) {
+		 Pieza pieza = taula[x][y].getPieza();
+
+		// Piezarik ez badago, ez dago okupatuta.
+		if (pieza == null) {
+			return false; // false bueltatzen da.
+		}
 		
+		return pieza.getZuriaDa() == pKolorea; //Kolore berdineko pieza badago, okupatuta dago (true); kolore desberineko pieza badago, ez dago okupatuta (false).
+		// "mugitu" metodoa egiterakoan, leku horretan dagoen pieza jango (galduko) da.
+	 }
+	
 }
