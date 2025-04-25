@@ -10,16 +10,23 @@ public class Teklatua {
 		this.sc = new Scanner(System.in);
 	}
 	
+	// Método estático para obtener la única instancia de Teklatua (Singleton)
 	public static Teklatua getTeklatua(){
 		if (Teklatua.nireTeklatua == null)
 			nireTeklatua = new Teklatua();
 		return Teklatua.nireTeklatua;
 	}
 	
-	
-	public int irakurri(){
-		String eran= sc.nextLine();
-		int zbk=Integer.parseInt(eran);
-		return zbk;
+
+	// Método para leer un número entero
+	public int irakurriInt() {
+		String eran = sc.nextLine();          // Lee la entrada como String
+	 	int zbk = Integer.parseInt(eran);     // Convierte la entrada a int
+	        return zbk;                           // Devuelve el número entero
 	}
+
+	// Método para leer una cadena de texto
+    	public String irakurriString() {
+    		return sc.nextLine();                 // Lee y devuelve la línea de texto introducida
+    	}
 }
