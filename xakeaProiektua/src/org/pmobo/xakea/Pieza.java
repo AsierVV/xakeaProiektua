@@ -35,11 +35,5 @@ public abstract class Pieza {
 	public void setKoordenatuak(Laukia pLaukia) {
 		this.laukia = pLaukia;
 	}
-	
-	public void piezaJan(){
-		this.galduta=true;	//La pieza ya no pertenece al juego.
 		
-	}
-	
-	
 }
