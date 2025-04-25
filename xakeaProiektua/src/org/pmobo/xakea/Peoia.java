@@ -15,58 +15,60 @@ public class Peoia extends Pieza {
 		if (pX < 0 || pX > 7 || pY < 0 || pY > 7) {
 	        return false;
 		}
-		if(this.mugituDa==false){
-			if(super.getZuriaDa()==true){
+		if(!this.mugituDa){
+			if(this.getZuriaDa()){
 				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
-					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())) {return false;}
-					else {
-						if(okupatutaDago(pX, pY, pZuriaDa)==false){
-							return true;
-						} else{return false;}
+					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())) {
+						return false;
+					} else {
+						if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+							return false;
+						} else{return true;}
 					}
 				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY, pZuriaDa)==true){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				}
 			} else{
 				if((pY-pLaukia.getY()==-1 || pY-pLaukia.getY()==-2) && pX==pLaukia.getX()){
 					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(),pLaukia.getY())) {return false;}
 					else {
-						if(okupatutaDago(pX, pY, pZuriaDa)==false){
-							return true;
-						} else{return false;}
+						if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+							return false;
+						} else{return true;}
 					}
 				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY, pZuriaDa)==true){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				}
 			}
 		} else{
 			if(super.zuriaDA==true){
 				if(pY-pLaukia.getY()==1 && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY, pZuriaDa)==false){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY, pZuriaDa)==true){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				}
 			} else{
 				if(pY-pLaukia.getY()==-1 && pX==pLaukia.getX()){
-					if(okupatutaDago(pX, pY, pZuriaDa)==false){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(okupatutaDago(pX, pY, pZuriaDa)==true){
-						return true;
-					} else{return false;}
+					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						return false;
+					} else{return true;}
 				}
 			}
 			
 		}
+		return false;
 	}
 	@Override
 	public String toString() {
