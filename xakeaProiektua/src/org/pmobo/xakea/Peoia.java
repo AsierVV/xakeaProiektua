@@ -12,6 +12,9 @@ public class Peoia extends Pieza {
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
+		if (pX < 0 || pX > 7 || pY < 0 || pY > 7) {
+	        return false;
+		}
 		if(this.mugituDa==false){
 			if(super.getZuriaDa()==true){
 				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
