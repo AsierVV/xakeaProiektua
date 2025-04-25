@@ -5,6 +5,8 @@ public class Taula {
 	//atributua
 	private Laukia[][] taula;
 	private static Taula nireTaula=null;
+	private List<Pieza> piezaGaldutaZuriak;
+    	private List<Pieza> piezaGaldutaBeltzak;
 	
 	//Singleton
 	private Taula() {
@@ -14,7 +16,10 @@ public class Taula {
 				taula[x][y] = new Laukia(x,y);
 			}
 		}
+		piezaGaldutaZuriak = new ArrayList<>();
+        	piezaGaldutaBeltzak = new ArrayList<>();
 	}
+	
 	public static Taula getTaula() {
 		if (nireTaula == null) {
 			nireTaula = new Taula();
@@ -219,7 +224,7 @@ public class Taula {
         		} else {
             			piezaBeltzGaldutak.add(piezaHarrapatuta);
         		}
-        	System.out.println("Harrapatutako pieza: " + piezaCapturada.getClass().getSimpleName());
+        	System.out.println("Harrapatutako pieza: " + piezaHarrapatuta.getClass().getSimpleName());
 	}
 }
 	
