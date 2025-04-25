@@ -6,8 +6,8 @@ public class Peoia extends Pieza {
 	private boolean mugituDa;
 
 	//eraikitzailea
-	public Peoia(boolean pZuriaDa, Laukia pLaukia) {
-		super(pZuriaDa, pLaukia);
+	public Peoia(boolean pZuriaDa) {
+		super(pZuriaDa);
 		this.mugituDa = false;
 	}
 	@Override
