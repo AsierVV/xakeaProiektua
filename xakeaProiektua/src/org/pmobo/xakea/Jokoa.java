@@ -53,8 +53,12 @@ public class Jokoa {
                 // Mugimendua egitea "METODO SIN IMPLEMENTAR (EN TAULA)"
                 taula.mugitu(laukiaHasiera, x2, y2); // El metodo "mugitu" movera la pieza a su nueva posicion y pondra un mensaje de que la pieza se ha movido.
                                                                 // Este metodo tb se tiene que encargar de llamar al metodo piezaJan, asi que comprobara si en las coordenadas x2 | y2 hay una pieza del color
-                                                              // contrario, y en ese caso, llamara al metodo piezaJan para que elimine esa pieza.
-        
+                                                                 // contrario, y en ese caso, llamara al metodo piezaJan para que elimine esa pieza.
+               //Peoi bat mugi bada, hobetu deitu
+                if (laukiaHasiera.getPieza() instanceof Peoia){
+                        peoiaHobetu(x2, y2);
+                }
+                                        
                 // Txandaz aldatu
                 aldatuTxanda();
         
