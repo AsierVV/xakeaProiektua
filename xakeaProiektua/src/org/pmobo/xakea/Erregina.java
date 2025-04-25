@@ -13,7 +13,7 @@ public class Erregina extends Pieza{
 	        return false;
 		}
 		if((pX==pLaukia.getX() && pY!=pLaukia.getY()) || ((pX!=pLaukia.getX() && pY==pLaukia.getY()) || Math.abs(pX-pLaukia.getX())==Math.abs(pY-pLaukia.getY()))) {
-			if(bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
+			if(Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())){
 				return false;
 			} else {
 				//okupatutaDago --> false: ez dago okupatuta edo okupatuta dago bere kolore ezberdina duen piezaz
