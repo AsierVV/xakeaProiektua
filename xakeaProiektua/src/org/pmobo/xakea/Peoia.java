@@ -18,7 +18,7 @@ public class Peoia extends Pieza {
 		if(this.mugituDa==false){
 			if(super.getZuriaDa()==true){
 				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
-					if (bideanZerbait(pX, pY, pLaukia.getX().pLaukia.getY())) {return false;}
+					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())) {return false;}
 					else {
 						if(okupatutaDago(pX, pY, pZuriaDa)==false){
 							return true;
@@ -31,7 +31,7 @@ public class Peoia extends Pieza {
 				}
 			} else{
 				if((pY-pLaukia.getY()==-1 || pY-pLaukia.getY()==-2) && pX==pLaukia.getX()){
-					if (bideanZerbait(pX, pY, pLaukia.getX().pLaukia.getY())) {return false;}
+					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(),pLaukia.getY())) {return false;}
 					else {
 						if(okupatutaDago(pX, pY, pZuriaDa)==false){
 							return true;
