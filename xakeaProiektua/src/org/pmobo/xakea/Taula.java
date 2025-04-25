@@ -208,6 +208,19 @@ public class Taula {
 		
 		return pieza.getZuriaDa() == pKolorea; //Kolore berdineko pieza badago, okupatuta dago (true); kolore desberineko pieza badago, ez dago okupatuta (false).
 		// "mugitu" metodoa egiterakoan, leku horretan dagoen pieza jango (galduko) da.
-	 }
+	}
+
+	public void piezaJan(int x, int y) {
+    		Pieza piezaHarrapatuta = taula[x][y].getPieza();
+    		//Pieza harrapatutaren kolorea konprobatzen du eta zerrenda desberdinetan gordetzen ditu
+    		if (piezaHarrapatuta != null) {
+        		if (piezaHarrapatuta.getZuriaDa()) {
+            			piezaZuriGaldutak.add(piezaHarrapatuta);
+        		} else {
+            			piezaBeltzGaldutak.add(piezaHarrapatuta);
+        		}
+        	System.out.println("Harrapatutako pieza: " + piezaCapturada.getClass().getSimpleName());
+	}
+}
 	
 }
