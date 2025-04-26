@@ -12,67 +12,86 @@ public class Peoia extends Pieza {
 	}
 	@Override
 	public boolean mugimenduEgokia(int pX, int pY, Laukia pLaukia){
+		int pX2 = pLaukia.getX();
+		int pY2 = pLaukia.getY();
+		boolean zuriaDa = this.getZuriaDa();
+		
 		if (pX < 0 || pX > 7 || pY < 0 || pY > 7) {
 	        return false;
 		}
 		if(!this.mugituDa){
-			if(this.getZuriaDa()){
-				if((pY-pLaukia.getY()==1 || pY-pLaukia.getY()==2) && pX==pLaukia.getX()){
-					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(), pLaukia.getY())) {
+			if(zuriaDa){
+				if((pY-pY2==1 || pY-pY2==2) && pX==pX2){
+					if (Taula.getTaula().bideanZerbait(pX, pY, pX2, pY2)) {
 						return false;
 					} else {
-						if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 							return false;
-						} else{return true;}
+						} else{
+							this.mugituDa = true;
+							return true;}
 					}
-				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+				} else if(pY-pY2==1 && (pX-pX2==1 || pX-pX2==-1)){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
+					} else{
+						this.mugituDa = true;
+						return true;}
 				}
 			} else{
-				if((pY-pLaukia.getY()==-1 || pY-pLaukia.getY()==-2) && pX==pLaukia.getX()){
-					if (Taula.getTaula().bideanZerbait(pX, pY, pLaukia.getX(),pLaukia.getY())) {return false;}
+				if((pY-pY2==-1 || pY-pY2==-2) && pX==pX2){
+					if (Taula.getTaula().bideanZerbait(pX, pY, pX2, pY2)) {return false;}
 					else {
-						if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+						if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 							return false;
-						} else{return true;}
+						} else{
+							this.mugituDa = true;
+							return true;}
 					}
-				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+				} else if(pY-pY2==-1 && (pX-pX2==1 || pX-pX2==-1)){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
+					} else{
+						this.mugituDa = true;
+						return true;}
 				}
 			}
 		} else{
-			if(super.zuriaDA==true){
-				if(pY-pLaukia.getY()==1 && pX==pLaukia.getX()){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+			if(zuriaDa){
+				if(pY-pY2==1 && pX==pX2){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
-				} else if(pY-pLaukia.getY()==1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+					} else{
+						this.mugituDa = true;
+						return true;}
+				} else if(pY-pY2==1 && (pX-pX2==1 || pX-pX2==-1)){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
+					} else{
+						this.mugituDa = true;
+						return true;}
 				}
 			} else{
-				if(pY-pLaukia.getY()==-1 && pX==pLaukia.getX()){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+				if(pY-pY2==-1 && pX==pX2){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
-				} else if(pY-pLaukia.getY()==-1 && (pX-pLaukia.getX()==1 || pX-pLaukia.getX()==-1)){
-					if(Taula.getTaula().okupatutaDago(pX, pY, this.getZuriaDa())){
+					} else{
+						this.mugituDa = true;
+						return true;}
+				} else if(pY-pY2==-1 && (pX-pX2==1 || pX-pX2==-1)){
+					if(Taula.getTaula().okupatutaDago(pX2, pY2, zuriaDa)){
 						return false;
-					} else{return true;}
+					} else{ this.mugituDa = true; 
+					return true;}
 				}
 			}
-			
 		}
 		return false;
 	}
 	@Override
 	public String toString() {
-	    return getZuriaDa() ? "♙" : "♟";  // Peón blanco y negro
+	    //return getZuriaDa() ? "♙" : "♟";  // Peón blanco y negro
+	    return getZuriaDa() ? "p" : "P";  // Peón blanco y negro
+
 	}
-	
 }
